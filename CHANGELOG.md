@@ -2,6 +2,8 @@
 
 ## 1.0.1 — 2026-05-17
 
+Docs-only / cleanup release. No code-behavior changes since v1.0.0.
+
 - Release notes corrected to reflect shipped behavior:
   - Click model documented as click-to-focus + double-click-to-open
   - Folder Roots mode documented
@@ -10,6 +12,11 @@
   - Orphan mode documented as tri-select, not binary toggle
   - Removed phantom `defaultColorBy` setting and unimplemented `>date` edge row
   - Settings table updated: added `outlineExportFolder` and `labelZoomThreshold`, corrected `excludedFolders` default
+- Reference doc retitled and renamed (RELEASE-NOTES.md → REFERENCE.md)
+- README trimmed: Features section now a highlights list with pointer to REFERENCE
+- README stale paths fixed and Roadmap refreshed
+- Internal docs convention established (`_private/` is gitignored)
+- Code drift fixes: stale fallback path, labelZoomThreshold default mismatch, removed dead lastViewFilename write, quoted numeric defaults converted to JSON numbers
 
 ## 1.0.0 — 2026-05-17
 
