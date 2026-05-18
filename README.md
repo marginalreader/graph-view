@@ -2,24 +2,19 @@
 
 Obsidian-style force-directed graph view of your NotePlan vault, with note-backed saved views and a click-to-anchor focus mode.
 
-> v0.2 — see [CHANGELOG.md](./CHANGELOG.md) for the full version history.
+> Current version: v1.0.1 — see [CHANGELOG.md](CHANGELOG.md) for version history.
 
 ## Features
 
-- Force-directed graph of all project notes (and optionally calendar notes)
-- Edges from `[[wikilinks]]`
-- **Click a node to lock + center** on it. The locked node renders as a hollow accent-bordered circle; its 1-hop neighborhood stays highlighted while everything else dims. Click the same node again, or click the background, to unlock.
-- **Double-click a node to open the note** in the editor.
-- Drag a node to reposition; mouse-wheel to zoom; drag the background to pan.
-- Color nodes by top-level folder; node radius scales with degree.
-- **Filter bar:**
-  - Nested folder tree — expand/collapse folders; checking/unchecking a parent propagates to all descendants.
-  - Tri-state Orphans selector (Show all / Hide orphans / Only orphans). "Only orphans" is great for surfacing notes that need linking.
-  - **Show folder roots** toggle (mindmap-style): collapses each top-level folder into a single hub with a note count. Click a hub to expand it and see its children orbiting; inter-folder wikilinks aggregate into hub-to-hub edges so folder-level structure is visible at a glance.
-- **Export outline** button: with a node locked as the anchor, exports a new outline note (title + bullet links to anchor and 1-hop neighbors) to a configurable folder, then opens it in an adjacent split-view.
-- **Saved views** stored as individual notes in `@Plugins/Zettel Graph/Views/`. Each view captures filters + appearance + the locked anchor node. Favoriting a view note in NotePlan's sidebar gives you one-click recall.
-- **Default view** loads automatically on panel open and survives NotePlan restarts.
-- Sidebar-pinnable; respects NotePlan dark mode.
+Highlights:
+
+- Force-directed graph view of your vault with click-to-focus, drag, zoom, and pan
+- **Folder Roots mode** — collapse top-level folders into hub nodes for a vault-wide overview
+- **Saved Views** stored as notes, with anchor + filters captured per view
+- **Export Outline** — generate a wikilink outline of any node's 1-hop neighborhood
+- Sidebar-pinnable, dark-mode-aware, works on iOS
+
+See [REFERENCE.md](REFERENCE.md) for the full feature reference, settings details, and known limitations.
 
 ## Requirements
 
@@ -64,7 +59,7 @@ The built artifacts (`script.js`, `webview-bundle.js`, `webview-styles.css`) liv
 |---|---|---|
 | Include Calendar Notes | `false` | Show daily/weekly notes as graph nodes |
 | Excluded Folders | `@Templates, @Archive, @Trash, @Plugins` | Folders never scanned (always applied, even on top of saved-view filters) |
-| Saved Views Folder | `@Plugins/Zettel Graph/Views` | Where saved-view notes live |
+| Saved Views Folder | `@Plugins/Zettel Graph View/Views` | Where saved-view notes live |
 | Outline Export Folder | `09 - QUICK ACCESS` | Where the **Export outline** button creates new notes |
 | Link Distance | `60` | D3 force-link distance |
 | Charge Strength | `-200` | D3 charge force strength |
@@ -75,7 +70,7 @@ The default view is managed inside the panel (Manage… → Set default), not in
 
 ## Saved Views
 
-Each saved view is its own note in `@Plugins/Zettel Graph/Views/`. Frontmatter holds metadata; a fenced ` ```json ` block in the body holds the full filter, appearance, and anchor config.
+Each saved view is its own note in `@Plugins/Zettel Graph View/Views/`. Frontmatter holds metadata; a fenced ` ```json ` block in the body holds the full filter, appearance, and anchor config.
 
 To favorite a view in NotePlan's sidebar: navigate to the view's note and add it to favorites. Clicking the in-note "Load this view" link applies the view to the graph panel via NotePlan's x-callback URL scheme.
 
@@ -109,17 +104,12 @@ The webview HTML is generated at runtime in the plugin and served via `HTMLView.
 
 ## Roadmap
 
-v0.2 shipped:
-- ✅ Folder root nodes (mindmap-style collapse/expand)
-- ✅ Export outline button
-- ✅ Nested folder filter
+Ideas parked for future versions — nothing committed, just what might come next:
 
-Parked for future versions:
 - Co-tag and co-mention edges (notes sharing N or more `#tags` / `@mentions` get an inferred edge)
 - Focus mode — render only the n-hop neighborhood of the locked anchor
 - Time-based filters / animation across creation dates
 - Canvas renderer for very large vaults (currently SVG)
-- Persist node positions inside saved views
 
 ## Reporting issues
 
