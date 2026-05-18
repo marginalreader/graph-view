@@ -1,6 +1,6 @@
 {
   "name": "marginalreader.ZettelGraphView",
-  "version": "0.3.0",
+  "version": "1.0.0",
   "private": true,
   "description": "NotePlan plugin: Obsidian-style graph view with note-backed saved views.",
   "author": "Marginal Reader",

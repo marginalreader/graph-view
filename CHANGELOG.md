@@ -1,5 +1,14 @@
 # Changelog
 
+## 1.0.0 — 2026-05-17
+
+- Renamed plugin to Zettel Graph View
+- Plugin ID: marginalreader.ZettelGraphView
+- Author: Marginal Reader
+- Command prefix changed to /zettel graph view (with aliases graph, gv, zgv)
+- windowID renamed to zettel-graph-view
+- savedViewsFolder default updated to @Plugins/Zettel Graph View/Views
+
 ## 0.3.0 — 2026-05-09
 
 ### Export outline: pick destination folder
