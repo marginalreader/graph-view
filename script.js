@@ -368,7 +368,7 @@ function buildSavedViewMarkdown(name, filters, appearance, focus, viewFilename) 
   const yaml = toYaml(fm);
   const cmd = encodeURIComponent('graph view: load view');
   const arg = encodeURIComponent(viewFilename);
-  const callback = `noteplan://x-callback-url/runPlugin?pluginID=ryan.graph-view&command=${cmd}&arg0=${arg}`;
+  const callback = `noteplan://x-callback-url/runPlugin?pluginID=graph-view&command=${cmd}&arg0=${arg}`;
   return `---\n${yaml}\n---\n\n` + `# ${name}\n\n` + `Saved view for the Graph View plugin.\n\n` + '```json\n' + cfgJson + '\n```\n\n' + `[Load this view](${callback})\n`;
 }
 async function handleSaveView(paramsStr) {
@@ -852,7 +852,7 @@ async function onSettingsUpdated() {
   }
 }
 function onUpdateOrInstall() {
-  console.log('ryan.graph-view installed/updated');
+  console.log('graph-view installed/updated');
 }
 
 exports.graphHTMLMessage = graphHTMLMessage;

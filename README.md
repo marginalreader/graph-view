@@ -27,7 +27,7 @@ Obsidian-style force-directed graph view of your NotePlan vault, with note-backe
 
 ## Install (development)
 
-This plugin is installed in-place at `~/Library/Containers/co.noteplan.NotePlan3/Data/Library/Application Support/co.noteplan.NotePlan3/Plugins/ryan.graph-view/`.
+This plugin is installed in-place at `~/Library/Containers/co.noteplan.NotePlan3/Data/Library/Application Support/co.noteplan.NotePlan3/Plugins/graph-view/`.
 
 ```sh
 npm install
@@ -84,7 +84,7 @@ To set a default view (loaded automatically when the panel opens, including afte
 ## Architecture
 
 ```
-ryan.graph-view/
+graph-view/
 ├── plugin.json           (manifest, sidebar pin, settings)
 ├── d3.min.js             (D3 v7 UMD, declared in plugin.requiredFiles)
 ├── script.js             (built: Node-side bundle)

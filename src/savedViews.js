@@ -163,7 +163,7 @@ export function buildSavedViewMarkdown(name, filters, appearance, focus, viewFil
   const yaml = toYaml(fm)
   const cmd = encodeURIComponent('graph view: load view')
   const arg = encodeURIComponent(viewFilename)
-  const callback = `noteplan://x-callback-url/runPlugin?pluginID=ryan.graph-view&command=${cmd}&arg0=${arg}`
+  const callback = `noteplan://x-callback-url/runPlugin?pluginID=graph-view&command=${cmd}&arg0=${arg}`
   return (
     `---\n${yaml}\n---\n\n` +
     `# ${name}\n\n` +

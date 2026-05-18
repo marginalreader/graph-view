@@ -2,7 +2,7 @@
   "noteplan.minAppVersion": "3.20.1",
   "macOS.minVersion": "10.15.7",
   "iOS.minVersion": "14",
-  "plugin.id": "ryan.graph-view",
+  "plugin.id": "graph-view",
   "plugin.name": "🕸️ Graph View",
   "plugin.description": "Obsidian-style graph view of your NotePlan vault, with note-backed saved views you can favorite in the sidebar.",
   "plugin.author": "Ryan Malone",

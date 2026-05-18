@@ -110,5 +110,5 @@ export async function onSettingsUpdated() {
 }
 
 export function onUpdateOrInstall() {
-  console.log('ryan.graph-view installed/updated')
+  console.log('graph-view installed/updated')
 }
