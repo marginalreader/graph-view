@@ -1,6 +1,5 @@
-# Zettel Graph View — v1.0 Release Notes
+# Zettel Graph View — Plugin Reference
 
-**Release Date:** May 17, 2026  
 **Plugin ID:** marginalreader.ZettelGraphView  
 **Author:** Marginal Reader  
 **Minimum NotePlan Version:** 3.20.1
@@ -97,7 +96,7 @@ Zettel Graph View is a NotePlan plugin that brings an Obsidian-style graph view 
 |---|---|---|
 | `/zettel graph view` | `graph`, `gv`, `zgv` | Open the graph panel |
 | `/zettel graph view: load view` | `load view` | Load a saved view by filename (typically invoked by the callback URL in a saved-view note) |
-| `/zettel graph view: save view` | `save view` | Save the current filters and appearance as a named view |
+| `/zettel graph view: save view` | `save view` | Save the current filters, appearance, and locked-node anchor as a named view |
 | `/zettel graph view: refresh` | `regraph` | Force a full rescan of the vault and redraw the graph |
 
 ---
