@@ -6,7 +6,7 @@ Submission cleanup release. No functional changes.
 
 - Added `LICENSE` (MIT)
 - Filled in `plugin.url` (https://github.com/marginalreader/zettel-graph-view)
-- Changed `outlineExportFolder` default from `09 - QUICK ACCESS` to `Notes` — the previous default was a dev-personal folder that other vaults don't have
+- Changed `outlineExportFolder` default from a dev-personal folder to `Notes` (universal across vaults)
 - README: replaced internal `_MCP-console.log` reference with a GitHub-issues link and a pointer to NotePlan's plugin console
 - Release packaging: switched from a single ZIP asset to individual files per NotePlan submission rules. This also scrubs the personal-data leak that affected v1.0.0 and v1.0.1 (those releases have been deleted)
 
@@ -50,12 +50,12 @@ Docs-only / cleanup release. No code-behavior changes since v1.0.0.
 ### Export outline
 - New top-bar **Export outline** button (disabled until a node is locked as the anchor).
 - Creates `<outlineExportFolder>/Outline - <anchor title>.md` with an H1 title and a flat bullet list — `[[anchor]]` first, then `[[wikilinks]]` to each 1-hop neighbor.
-- Output folder defaults to `09 - QUICK ACCESS` and is configurable via the `outlineExportFolder` plugin setting.
+- Output folder is configurable via the `outlineExportFolder` plugin setting.
 - Opens the new note in an adjacent split-view automatically.
 
 ### Folder root nodes (mindmap-style collapse/expand)
 - New **"Show folder roots"** toggle in the Filters panel (off by default; saved per view).
-- When on, the graph collapses into one synthetic **hub per top-level folder** with a count appended (e.g. `100 - ZETTELKASTEN (87)`).
+- When on, the graph collapses into one synthetic **hub per top-level folder** with a count appended (e.g. `Notes (87)`).
 - Inter-folder wikilinks **aggregate into hub-to-hub edges** with weight = total connections, so folder-level structure is visible at a glance.
 - **Single-click a hub** → expand the folder; child notes appear orbiting the hub via synthetic spokes; cross-folder wikilinks auto-rewrite to point at collapsed neighboring hubs. Click again to collapse.
 - **Double-click a hub** → opens the most-recently-changed note in that folder.
