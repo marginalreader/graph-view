@@ -2,6 +2,8 @@
 
 Obsidian-style force-directed graph view of your NotePlan vault, with note-backed saved views and a click-to-anchor focus mode.
 
+Built for Zettelkasten workflows where the same notes are browsed through many different lenses — permanent notes only, this month's literature, a single project's neighborhood. The graph is an interactive panel docked inside NotePlan's main window.
+
 > Current version: v1.0.2 — see [CHANGELOG.md](CHANGELOG.md) for version history.
 
 ## Features
@@ -13,8 +15,6 @@ Highlights:
 - **Saved Views** stored as notes, with anchor + filters captured per view
 - **Export Outline** — generate a wikilink outline of any node's 1-hop neighborhood
 - Sidebar-pinnable, dark-mode-aware, works on iOS
-
-See [REFERENCE.md](REFERENCE.md) for the full feature reference, settings details, and known limitations.
 
 ## Requirements
 
@@ -101,6 +101,13 @@ marginalreader.ZettelGraphView/
 ```
 
 The webview HTML is generated at runtime in the plugin and served via `HTMLView.showInMainWindow`. It loads `./d3.min.js`, `./webview-styles.css`, and `./webview-bundle.js` from the plugin root.
+
+## Known Limitations
+
+- **No focus mode yet** — can't restrict the graph to a single note's n-hop neighborhood.
+- **Co-tag and co-mention edges not supported** — only `[[wikilinks]]` count as connections in this version.
+- **SVG renderer only** — vaults with more than ~2,000 nodes may see slowdown. A canvas renderer is on the roadmap for larger vaults.
+- **Graph snapshots at panel-open time** — adding or linking notes while the panel is open requires hitting refresh to see the new state.
 
 ## Roadmap
 
